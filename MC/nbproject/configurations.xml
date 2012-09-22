@@ -37,6 +37,11 @@
         <cTool>
           <standard>2</standard>
         </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">

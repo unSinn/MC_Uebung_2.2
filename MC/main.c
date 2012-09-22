@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
     printf("Input war: \"%d\"\n", i);
 
     char* output = itoa(i);
-     printf("Das ganze als Sring: \"%s\"\n", output);
-    
+    printf("Das ganze als Sring: \"%s\"\n", output);
+
     /*    reverse(s); */
 
     return (EXIT_SUCCESS);
@@ -62,17 +62,21 @@ int main(int argc, char *argv[]) {
     return rev;
 }*/
 
+/*
+ * ASCII 48 – 57 – numbers '0'-'9'
+ */
 char* itoa(int i) {
-    double j = (double) i;
-    j  = (int) log10(j);
-    int s_len = (int) j;
+    double l10 = log10(i);
+    int s_len = (int) l10 + 1;
     char* output = (char*) malloc(sizeof (char) *
             s_len + 1);
-    
-    char eis = 31;
-    output[0] = eis;
 
-    output[s_len+1]= '\n';
+    char eis = 48;
+    output[0] = eis;
+    char zwoi = 49;
+    output[1] = zwoi;
+
+    output[s_len + 1] = '\n';
     return output;
 }
 
