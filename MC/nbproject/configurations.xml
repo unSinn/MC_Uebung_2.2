@@ -34,6 +34,9 @@
         <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
+        <cTool>
+          <standard>2</standard>
+        </cTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">

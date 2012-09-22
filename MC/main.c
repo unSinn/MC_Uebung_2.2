@@ -7,7 +7,7 @@
  * dezimaler Darstellung als Zeichenkette zurück gibt. Die dazu benötigte Zeichenkette soll
  * dynamisch alloziert werden.
  * Zur Berechnung der Anzahl Zeichen eines Wertes in dezimaler Darstellung können Sie den 10er
- * Logarithmus mit der Funktion log10(...) berechnen. Den Absolutwert einer Zahl erhalten Sie mit
+ * Logarithmus mit der Funktion log10(...) berechnen. Den Absolutwert einer Zahl erhalten Sie mit abs().
  *
  * Created on September 18, 2012, 3:37 PM
  */
@@ -19,6 +19,7 @@
 
 
 char* reverse(char s[]);
+char* itoa(int i);
 
 #define MAXLAENGE 50
 
@@ -26,7 +27,6 @@ char* reverse(char s[]);
  * 
  */
 int main(int argc, char *argv[]) {
-    char s[MAXLAENGE];
 
     printf("===========================================\n");
     printf("Übung 2.2\n");
@@ -34,14 +34,18 @@ int main(int argc, char *argv[]) {
     printf("===========================================\n");
 
 
-    printf("Input war \"%s\"\n", s);
+    int i = 76543;
+    printf("Input war: \"%d\"\n", i);
 
-    reverse(s);
+    char* output = itoa(i);
+     printf("Das ganze als Sring: \"%s\"\n", output);
+    
+    /*    reverse(s); */
 
     return (EXIT_SUCCESS);
 }
 
-char* reverse(char s[]) {
+/*char* reverse(char s[]) {
     int s_len = strlen(s);
     char rev[s_len];
     char c;
@@ -56,14 +60,20 @@ char* reverse(char s[]) {
     rev[s_len] = '\0';
 
     return rev;
-}
+}*/
 
 char* itoa(int i) {
-    //int len = strlen(s);
+    double j = (double) i;
+    j  = (int) log10(j);
+    int s_len = (int) j;
+    char* output = (char*) malloc(sizeof (char) *
+            s_len + 1);
+    
+    char eis = 31;
+    output[0] = eis;
 
-    double log10(double z);
-    int abs(int z);
-
+    output[s_len+1]= '\n';
+    return output;
 }
 
 
