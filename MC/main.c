@@ -15,6 +15,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
 
 char* reverse(char s[]);
 
@@ -25,59 +27,43 @@ char* reverse(char s[]);
  */
 int main(int argc, char *argv[]) {
     char s[MAXLAENGE];
-    
+
     printf("===========================================\n");
     printf("Übung 2.2\n");
     printf("Authoren: Fabian Mächler, Erismann Marcel\n");
     printf("===========================================\n");
-    printf("Bitte etwas eingeben und ENTER drücken...\n");
-    
-    readLine(&s,MAXLAENGE);
+
+
     printf("Input war \"%s\"\n", s);
-    
+
     reverse(s);
 
     return (EXIT_SUCCESS);
 }
 
-/**
- * Liest eine Zeile von maximal limit Zeichen ein.
- * Die Zeichen werden (inklusive Zeilenende-Zeichen) im übergebenen
- * Vektor s /0 terminiert abgelegt.
- * 
- * Quelle: Uebungen_2.pdf
- * 
- * @param s Zeiger auf den Vektor zum Speichern der Eingabe
- * @param limit Maximale Grösse des Vektors
- * @return Anzahl eingelesene Zeichen
- */
-int readLine(char s[], int limit) {
-    int i = 0;
-    int c;
-    c = getchar();
-    while ((c != EOF) &&
-            (c != '\n') &&
-            (i < limit - 1)) {
-        s[i] = c;
-        i++;
-        c = getchar();
+char* reverse(char s[]) {
+    int s_len = strlen(s);
+    char rev[s_len];
+    char c;
+    int i;
+
+    for (i = 0; i < s_len; i++) {
+        c = s[i];
+        if (c != '\0') {
+            rev[s_len - 1 - i] = c;
+        }
     }
-    if (c == '\n') {
-        s[i] = '\n';
-        i++;
-    }
-    s[i] = '\0';
-    return i;
+    rev[s_len] = '\0';
+
+    return rev;
 }
 
-//?
-char* reverse(char s[]){
-    char rev[MAXLAENGE];
-}
-
-
-char* itoa(int i){
+char* itoa(int i) {
     //int len = strlen(s);
+
+    double log10(double z);
+    int abs(int z);
+
 }
 
 
